@@ -8,14 +8,19 @@ import Carousel from "react-bootstrap/Carousel";
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Carousel>
+      <Carousel interval={null}>
         {props.imgPaths.map((img, index) => (
           <Carousel.Item key={index}>
             <img
               className="d-block w-100"
               src={img}
               alt={`slide-${index}`}
-              style={{ height: "250px", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "500px",
+                objectFit: "contain"
+              }}
             />
           </Carousel.Item>
         ))}
